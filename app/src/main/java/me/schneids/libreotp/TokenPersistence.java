@@ -1,14 +1,11 @@
-package org.fedorahosted.freeotp;
+package me.schneids.libreotp;
 
 import java.lang.reflect.Type;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.fedorahosted.freeotp.Token.TokenUriInvalidException;
-
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -37,8 +34,8 @@ public class TokenPersistence {
             Token token = new Token(uri);
             new TokenPersistence(ctx).add(token);
             return token;
-        } catch (TokenUriInvalidException e) {
-            Toast.makeText(ctx, R.string.invalid_token, Toast.LENGTH_SHORT).show();
+        } catch (Token.TokenUriInvalidException e) {
+            Toast.makeText(ctx, me.schneids.libreotp.R.string.invalid_token, Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
 
@@ -64,7 +61,7 @@ public class TokenPersistence {
             // Backwards compatibility for URL-based persistence.
             try {
                 return new Token(str, true);
-            } catch (TokenUriInvalidException tuie) {
+            } catch (Token.TokenUriInvalidException tuie) {
                 tuie.printStackTrace();
             }
         }
@@ -72,7 +69,7 @@ public class TokenPersistence {
         return null;
     }
 
-    public void add(Token token) throws TokenUriInvalidException {
+    public void add(Token token) throws Token.TokenUriInvalidException {
         String key = token.getID();
 
         if (prefs.contains(key))

@@ -18,13 +18,13 @@
  * limitations under the License.
  */
 
-package org.fedorahosted.freeotp.add;
+package me.schneids.libreotp.add;
 
 import java.util.List;
 
-import org.fedorahosted.freeotp.R;
-import org.fedorahosted.freeotp.Token;
-import org.fedorahosted.freeotp.TokenPersistence;
+import me.schneids.libreotp.R;
+import me.schneids.libreotp.Token;
+import me.schneids.libreotp.TokenPersistence;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -39,7 +39,6 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;

@@ -18,14 +18,14 @@
  * limitations under the License.
  */
 
-package org.fedorahosted.freeotp.add;
+package me.schneids.libreotp.add;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Locale;
 
-import org.fedorahosted.freeotp.R;
-import org.fedorahosted.freeotp.TokenPersistence;
+import me.schneids.libreotp.R;
+import me.schneids.libreotp.TokenPersistence;
 
 import android.app.Activity;
 import android.content.Intent;

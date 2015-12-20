@@ -1,4 +1,4 @@
-package org.fedorahosted.freeotp.edit;
+package me.schneids.libreotp.edit;
 
 import android.app.Activity;
 import android.os.Bundle;

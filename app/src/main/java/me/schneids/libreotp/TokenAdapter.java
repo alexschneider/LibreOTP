@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-package org.fedorahosted.freeotp;
+package me.schneids.libreotp;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -32,8 +32,8 @@ import android.view.ViewGroup;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-import org.fedorahosted.freeotp.edit.DeleteActivity;
-import org.fedorahosted.freeotp.edit.EditActivity;
+import me.schneids.libreotp.edit.DeleteActivity;
+import me.schneids.libreotp.edit.EditActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -89,19 +89,19 @@ public class TokenAdapter extends BaseReorderableAdapter {
         TokenLayout tl = (TokenLayout) view;
         Token token = getItem(position);
 
-        tl.bind(token, R.menu.token, new PopupMenu.OnMenuItemClickListener() {
+        tl.bind(token, me.schneids.libreotp.R.menu.token, new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 Intent i;
 
                 switch (item.getItemId()) {
-                    case R.id.action_edit:
+                    case me.schneids.libreotp.R.id.action_edit:
                         i = new Intent(ctx, EditActivity.class);
                         i.putExtra(EditActivity.EXTRA_POSITION, position);
                         ctx.startActivity(i);
                         break;
 
-                    case R.id.action_delete:
+                    case me.schneids.libreotp.R.id.action_delete:
                         i = new Intent(ctx, DeleteActivity.class);
                         i.putExtra(DeleteActivity.EXTRA_POSITION, position);
                         ctx.startActivity(i);
@@ -125,7 +125,7 @@ public class TokenAdapter extends BaseReorderableAdapter {
                 // Copy code to clipboard.
                 mClipMan.setPrimaryClip(ClipData.newPlainText(null, codes.getCurrentCode()));
                 Toast.makeText(v.getContext().getApplicationContext(),
-                        R.string.code_copied,
+                        me.schneids.libreotp.R.string.code_copied,
                         Toast.LENGTH_SHORT).show();
 
                 mTokenCodes.put(token.getID(), codes);
@@ -140,6 +140,6 @@ public class TokenAdapter extends BaseReorderableAdapter {
 
     @Override
     protected View createView(ViewGroup parent, int type) {
-        return mLayoutInflater.inflate(R.layout.token, parent, false);
+        return mLayoutInflater.inflate(me.schneids.libreotp.R.layout.token, parent, false);
     }
 }

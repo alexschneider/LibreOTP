@@ -34,10 +34,10 @@
  * limitations under the License.
  */
 
-package org.fedorahosted.freeotp;
+package me.schneids.libreotp;
 
-import org.fedorahosted.freeotp.add.AddActivity;
-import org.fedorahosted.freeotp.add.ScanActivity;
+import me.schneids.libreotp.add.AddActivity;
+import me.schneids.libreotp.add.ScanActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -59,10 +59,10 @@ public class MainActivity extends Activity implements OnMenuItemClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         onNewIntent(getIntent());
-        setContentView(R.layout.main);
+        setContentView(me.schneids.libreotp.R.layout.main);
 
         mTokenAdapter = new TokenAdapter(this);
-        ((GridView) findViewById(R.id.grid)).setAdapter(mTokenAdapter);
+        ((GridView) findViewById(me.schneids.libreotp.R.id.grid)).setAdapter(mTokenAdapter);
 
         // Don't permit screenshots since these might contain OTP codes.
         getWindow().setFlags(LayoutParams.FLAG_SECURE, LayoutParams.FLAG_SECURE);
@@ -100,27 +100,27 @@ public class MainActivity extends Activity implements OnMenuItemClickListener {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        menu.findItem(R.id.action_scan).setVisible(ScanActivity.haveCamera());
-        menu.findItem(R.id.action_scan).setOnMenuItemClickListener(this);
-        menu.findItem(R.id.action_add).setOnMenuItemClickListener(this);
-        menu.findItem(R.id.action_about).setOnMenuItemClickListener(this);
+        getMenuInflater().inflate(me.schneids.libreotp.R.menu.main, menu);
+        menu.findItem(me.schneids.libreotp.R.id.action_scan).setVisible(ScanActivity.haveCamera());
+        menu.findItem(me.schneids.libreotp.R.id.action_scan).setOnMenuItemClickListener(this);
+        menu.findItem(me.schneids.libreotp.R.id.action_add).setOnMenuItemClickListener(this);
+        menu.findItem(me.schneids.libreotp.R.id.action_about).setOnMenuItemClickListener(this);
         return true;
     }
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
-        case R.id.action_scan:
+        case me.schneids.libreotp.R.id.action_scan:
             startActivity(new Intent(this, ScanActivity.class));
-            overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+            overridePendingTransition(me.schneids.libreotp.R.anim.fadein, me.schneids.libreotp.R.anim.fadeout);
             return true;
 
-        case R.id.action_add:
+        case me.schneids.libreotp.R.id.action_add:
             startActivity(new Intent(this, AddActivity.class));
             return true;
 
-        case R.id.action_about:
+        case me.schneids.libreotp.R.id.action_about:
             startActivity(new Intent(this, AboutActivity.class));
             return true;
         }

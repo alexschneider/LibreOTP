@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-package org.fedorahosted.freeotp;
+package me.schneids.libreotp;
 
 import android.content.ClipData;
 import android.view.DragEvent;
@@ -55,8 +55,8 @@ public abstract class BaseReorderableAdapter extends BaseAdapter {
                         srcView.setVisibility(View.VISIBLE);
                         dstView.setVisibility(View.INVISIBLE);
 
-                        move(((Integer) srcView.getTag(R.id.reorder_key)).intValue(),
-                             ((Integer) dstView.getTag(R.id.reorder_key)).intValue());
+                        move(((Integer) srcView.getTag(me.schneids.libreotp.R.id.reorder_key)).intValue(),
+                             ((Integer) dstView.getTag(me.schneids.libreotp.R.id.reorder_key)).intValue());
                         ref.reference = dstView;
                         break;
 
@@ -96,7 +96,7 @@ public abstract class BaseReorderableAdapter extends BaseAdapter {
             });
         }
 
-        convertView.setTag(R.id.reorder_key, Integer.valueOf(position));
+        convertView.setTag(me.schneids.libreotp.R.id.reorder_key, Integer.valueOf(position));
         bindView(convertView, position);
         return convertView;
     }

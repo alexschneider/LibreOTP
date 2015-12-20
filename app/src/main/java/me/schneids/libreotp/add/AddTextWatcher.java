@@ -18,9 +18,9 @@
  * limitations under the License.
  */
 
-package org.fedorahosted.freeotp.add;
+package me.schneids.libreotp.add;
 
-import org.fedorahosted.freeotp.R;
+import me.schneids.libreotp.R;
 
 import android.app.Activity;
 import android.text.Editable;

@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-package org.fedorahosted.freeotp;
+package me.schneids.libreotp;
 
 public class TokenCode {
     private final String mCode;

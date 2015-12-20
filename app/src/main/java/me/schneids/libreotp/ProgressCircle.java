@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-package org.fedorahosted.freeotp;
+package me.schneids.libreotp;
 
 import android.content.Context;
 import android.content.res.Resources.Theme;
@@ -73,11 +73,11 @@ public class ProgressCircle extends View {
 
         if (attrs != null) {
             Theme t = context.getTheme();
-            TypedArray a = t.obtainStyledAttributes(attrs, R.styleable.ProgressCircle, 0, 0);
+            TypedArray a = t.obtainStyledAttributes(attrs, me.schneids.libreotp.R.styleable.ProgressCircle, 0, 0);
 
             try {
-                setMax(a.getInteger(R.styleable.ProgressCircle_max, 100));
-                setHollow(a.getBoolean(R.styleable.ProgressCircle_hollow, false));
+                setMax(a.getInteger(me.schneids.libreotp.R.styleable.ProgressCircle_max, 100));
+                setHollow(a.getBoolean(me.schneids.libreotp.R.styleable.ProgressCircle_hollow, false));
             } finally {
                 a.recycle();
             }

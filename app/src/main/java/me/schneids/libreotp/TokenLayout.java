@@ -1,4 +1,4 @@
-package org.fedorahosted.freeotp;
+package me.schneids.libreotp;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -11,9 +11,6 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-
-import org.fedorahosted.freeotp.edit.DeleteActivity;
-import org.fedorahosted.freeotp.edit.EditActivity;
 
 public class TokenLayout extends FrameLayout implements View.OnClickListener, Runnable {
     private ProgressCircle mProgressInner;
@@ -46,13 +43,13 @@ public class TokenLayout extends FrameLayout implements View.OnClickListener, Ru
     protected void onFinishInflate() {
         super.onFinishInflate();
 
-        mProgressInner = (ProgressCircle) findViewById(R.id.progressInner);
-        mProgressOuter = (ProgressCircle) findViewById(R.id.progressOuter);
-        mImage = (ImageView) findViewById(R.id.image);
-        mCode = (TextView) findViewById(R.id.code);
-        mIssuer = (TextView) findViewById(R.id.issuer);
-        mLabel = (TextView) findViewById(R.id.label);
-        mMenu = (ImageView) findViewById(R.id.menu);
+        mProgressInner = (ProgressCircle) findViewById(me.schneids.libreotp.R.id.progressInner);
+        mProgressOuter = (ProgressCircle) findViewById(me.schneids.libreotp.R.id.progressOuter);
+        mImage = (ImageView) findViewById(me.schneids.libreotp.R.id.image);
+        mCode = (TextView) findViewById(me.schneids.libreotp.R.id.code);
+        mIssuer = (TextView) findViewById(me.schneids.libreotp.R.id.issuer);
+        mLabel = (TextView) findViewById(me.schneids.libreotp.R.id.label);
+        mMenu = (ImageView) findViewById(me.schneids.libreotp.R.id.menu);
 
         mPopupMenu = new PopupMenu(getContext(), mMenu);
         mMenu.setOnClickListener(this);
@@ -84,7 +81,7 @@ public class TokenLayout extends FrameLayout implements View.OnClickListener, Ru
         // Show the image.
         Picasso.with(getContext())
                 .load(token.getImage())
-                .placeholder(R.drawable.logo)
+                .placeholder(me.schneids.libreotp.R.drawable.logo)
                 .into(mImage);
 
         // Set the labels.
@@ -112,8 +109,8 @@ public class TokenLayout extends FrameLayout implements View.OnClickListener, Ru
 
         // Start animations.
         mProgressInner.setVisibility(View.VISIBLE);
-        animate(mProgressInner, R.anim.fadein, animate);
-        animate(mImage, R.anim.token_image_fadeout, animate);
+        animate(mProgressInner, me.schneids.libreotp.R.anim.fadein, animate);
+        animate(mImage, me.schneids.libreotp.R.anim.token_image_fadeout, animate);
 
         // Handle type-specific UI.
         switch (type) {
@@ -122,7 +119,7 @@ public class TokenLayout extends FrameLayout implements View.OnClickListener, Ru
                 break;
             case TOTP:
                 mProgressOuter.setVisibility(View.VISIBLE);
-                animate(mProgressOuter, R.anim.fadein, animate);
+                animate(mProgressOuter, me.schneids.libreotp.R.anim.fadein, animate);
                 break;
         }
 
@@ -157,6 +154,6 @@ public class TokenLayout extends FrameLayout implements View.OnClickListener, Ru
         mCode.setText(mPlaceholder);
         mProgressInner.setVisibility(View.GONE);
         mProgressOuter.setVisibility(View.GONE);
-        animate(mImage, R.anim.token_image_fadein, true);
+        animate(mImage, me.schneids.libreotp.R.anim.token_image_fadein, true);
     }
 }

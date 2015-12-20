@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-package org.fedorahosted.freeotp;
+package me.schneids.libreotp;
 
 import java.nio.ByteBuffer;
 import java.security.InvalidKeyException;

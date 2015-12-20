@@ -20,7 +20,7 @@
    -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.fedorahosted.freeotp"
+    package="me.schneids.libreotp"
     android:versionCode="16"
     android:versionName="1.5" >
 
@@ -49,36 +49,36 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name=".AboutActivity"
+            android:name="me.schneids.libreotp.AboutActivity"
             android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"
             />
 
         <activity
-            android:name=".add.ScanActivity"
+            android:name="me.schneids.libreotp.add.ScanActivity"
             android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
             />
 
         <activity
-            android:name=".add.AddActivity"
+            android:name="me.schneids.libreotp.add.AddActivity"
             android:label="@string/add_token"
             android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"
             android:windowSoftInputMode="stateVisible"
             />
 
         <activity
-            android:name=".edit.DeleteActivity"
+            android:name="me.schneids.libreotp.edit.DeleteActivity"
             android:label="@string/delete_question"
             android:theme="@android:style/Theme.Holo.Light.Dialog"
             />
 
         <activity
-            android:name=".edit.EditActivity"
+            android:name="me.schneids.libreotp.edit.EditActivity"
             android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"
             android:windowSoftInputMode="stateVisible"
             />
 
         <activity
-            android:name=".MainActivity"
+            android:name="me.schneids.libreotp.MainActivity"
             android:label="@string/app_name"
             android:clearTaskOnLaunch="true"
             android:launchMode="singleTask"

@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-package org.fedorahosted.freeotp;
+package me.schneids.libreotp;
 
 import android.app.Activity;
 import android.content.pm.PackageInfo;
@@ -33,7 +33,7 @@ public class AboutActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.about);
+        setContentView(me.schneids.libreotp.R.layout.about);
     }
 
     @Override
@@ -46,29 +46,29 @@ public class AboutActivity extends Activity {
         try {
             PackageManager pm = getPackageManager();
             PackageInfo info = pm.getPackageInfo(getPackageName(), 0);
-            String version = res.getString(R.string.about_version, info.versionName, info.versionCode);
-            tv = (TextView) findViewById(R.id.about_version);
+            String version = res.getString(me.schneids.libreotp.R.string.about_version, info.versionName, info.versionCode);
+            tv = (TextView) findViewById(me.schneids.libreotp.R.id.about_version);
             tv.setText(version);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
 
-        String apache2 = res.getString(R.string.link_apache2);
-        String license = res.getString(R.string.about_license, apache2);
-        tv = (TextView) findViewById(R.id.about_license);
+        String apache2 = res.getString(me.schneids.libreotp.R.string.link_apache2);
+        String license = res.getString(me.schneids.libreotp.R.string.about_license, apache2);
+        tv = (TextView) findViewById(me.schneids.libreotp.R.id.about_license);
         tv.setMovementMethod(LinkMovementMethod.getInstance());
         tv.setText(Html.fromHtml(license));
 
-        String lwebsite = res.getString(R.string.link_website);
-        String swebsite = res.getString(R.string.about_website, lwebsite);
-        tv = (TextView) findViewById(R.id.about_website);
+        String lwebsite = res.getString(me.schneids.libreotp.R.string.link_website);
+        String swebsite = res.getString(me.schneids.libreotp.R.string.about_website, lwebsite);
+        tv = (TextView) findViewById(me.schneids.libreotp.R.id.about_website);
         tv.setMovementMethod(LinkMovementMethod.getInstance());
         tv.setText(Html.fromHtml(swebsite));
 
-        String problem = res.getString(R.string.link_report_a_problem);
-        String help = res.getString(R.string.link_ask_for_help);
-        String feedback = res.getString(R.string.about_feedback, problem, help);
-        tv = (TextView) findViewById(R.id.about_feedback);
+        String problem = res.getString(me.schneids.libreotp.R.string.link_report_a_problem);
+        String help = res.getString(me.schneids.libreotp.R.string.link_ask_for_help);
+        String feedback = res.getString(me.schneids.libreotp.R.string.about_feedback, problem, help);
+        tv = (TextView) findViewById(me.schneids.libreotp.R.id.about_feedback);
         tv.setMovementMethod(LinkMovementMethod.getInstance());
         tv.setText(Html.fromHtml(feedback));
     }

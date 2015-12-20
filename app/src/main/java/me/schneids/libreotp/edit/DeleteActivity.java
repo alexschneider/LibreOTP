@@ -1,8 +1,8 @@
-package org.fedorahosted.freeotp.edit;
+package me.schneids.libreotp.edit;
 
-import org.fedorahosted.freeotp.R;
-import org.fedorahosted.freeotp.Token;
-import org.fedorahosted.freeotp.TokenPersistence;
+import me.schneids.libreotp.Token;
+import me.schneids.libreotp.R;
+import me.schneids.libreotp.TokenPersistence;
 
 import android.os.Bundle;
 import android.view.View;
